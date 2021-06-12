@@ -1,0 +1,29 @@
+:root{
+    --primary: rgb(255,255,255);
+    --secondary: rgb(0,0,0);
+    --input: rgb(161, 91, 109);
+    
+
+}
+
+#calculator{
+    display: grid;
+    height: 75vh;
+    width: 40%;
+    align-items: center;
+}
+.display{
+    height: 3.5rem;
+}
+button{
+    border-radius: 13px;
+    margin: 0;
+    padding: 3px;
+    border: solid black;
+    background-color: var(--primary);
+    height: 2.5rem;
+    width: 2.5rem;
+}
+div{
+    margin: 0;
+}
