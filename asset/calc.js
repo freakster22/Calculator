@@ -151,4 +151,3 @@ equal.addEventListener("click", function () {
 allclr.addEventListener("click", function () {
     input.value = "";
 })
-
