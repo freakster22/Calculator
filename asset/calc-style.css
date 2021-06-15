@@ -1,0 +1,77 @@
+@font-face {
+    font-family: Kalam;
+    src: url("Kalam-Bold.ttf");
+}
+
+
+:root{
+    --primary: rgb(255,255,255);
+    --secondary: rgb(12, 12, 12);
+    --input: rgba(93, 93, 93, 0.93);
+    --btnClr: linear-gradient(135deg, #d5ebfb 0%,#89c3eb 49%,#abd3ee 50%,#ebf1f6 100%);
+
+}
+body{
+    background-color: var(--secondary);
+}
+.calculator{
+    background-color: var(--secondary);
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    font-size: 2.3rem;
+}
+#display{
+    height: 4rem;
+    border-radius: 3px;
+    background-color: var(--input);
+    width: calc(5rem * 3);
+    font-size: 3.3rem;
+    font-family: Kalam;
+    text-align-last: right;
+    border-right: none;
+    margin-right: 0;
+    margin-bottom: 0.3rem;
+
+}
+#backspace{
+    height: 4rem;
+    border-radius: 3px;
+    background-color: var(--input);
+    margin-left: 0;
+    border-left: none;
+    align-items: center;
+    align-content: center;
+}
+button{
+    background: var(--btnClr);
+    border-radius: 40px;
+    margin: 2px;
+    padding: 3px;
+    border: solid black;
+    background-color: var(--primary);
+    height: 5rem;
+    width: 5rem;
+    font-size: 3rem;
+    font-family: Kalam;
+    box-shadow: 3px 2px 5px rgb(212,175,55);
+}
+/* div{
+    margin: 0;
+} */
+#power{
+    font-size: 2.65rem;
+}
+#AC{
+    font-size: 1.2rem;
+}
+.footer{
+    text-align:center;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(34, 6, 6);
+    color: var(--primary);
+}

@@ -8,6 +8,8 @@ var num7 = document.getElementById("7");
 var num8 = document.getElementById("8");
 var num9 = document.getElementById("9");
 var num0 = document.getElementById("0");
+var sign = document.getElementById("sign");
+var backspace = document.getElementById("backspace");
 var plus = document.getElementById("plus");
 var minus = document.getElementById("minus");
 var mul = document.getElementById("mul");
@@ -18,6 +20,7 @@ var decimal = document.getElementById("decimal");
 var power = document.getElementById("power");
 var allclr = document.getElementById("AC");
 var input = document.getElementById("display");
+
 
 num0.addEventListener("click", function () {
     console.log("0 pressed");
@@ -104,15 +107,45 @@ power.addEventListener("click", function () {
     input.value += "^";
 })
 
+sign.addEventListener("click", function () {
+    input.value = -(input.value);
+})
+
+backspace.addEventListener("click", function () {
+    expression = input.value;
+    console.log(expression);
+    if (expression != 0) {
+        len = expression.length;
+        input.value = expression.substr(0, len - 1);
+    }
+    else input.value = "";
+})
+
 equal.addEventListener("click", function () {
     var expression = input.value;
     if (expression.includes("^")) {
         var x = expression.substr(0, expression.indexOf('^'));
         var y = expression.substr(expression.indexOf('^') + 1, expression.length);
         input.value = Math.pow(x, y);
+        
     }
     else
-        input.value = eval(expression);
+        try {
+            expression = eval(expression);
+            console.log(expression);
+            if (expression != expression) {
+                console.log("true");
+                input.value = "| ERROR!! |";
+            }
+            else {
+                console.log("false");
+                console.log(expression);
+                input.value = expression;
+            }
+        } catch (e) {
+            input.value = "| ERROR!! |";
+            alert("Error occured!");
+        }
 });
 
 allclr.addEventListener("click", function () {
