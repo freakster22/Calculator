@@ -21,6 +21,7 @@ var power = document.getElementById("power");
 var allclr = document.getElementById("AC");
 var input = document.getElementById("display");
 
+var mode = document.getElementById("mode");
 
 num0.addEventListener("click", function () {
     console.log("0 pressed");
@@ -127,7 +128,7 @@ equal.addEventListener("click", function () {
         var x = expression.substr(0, expression.indexOf('^'));
         var y = expression.substr(expression.indexOf('^') + 1, expression.length);
         input.value = Math.pow(x, y);
-        
+
     }
     else
         try {
@@ -150,4 +151,18 @@ equal.addEventListener("click", function () {
 
 allclr.addEventListener("click", function () {
     input.value = "";
+})
+
+mode.addEventListener("click", function () {
+    if (document.documentElement.getAttribute("color-mode") == "dark"){
+        document.documentElement.setAttribute("color-mode", "light");
+        mode.innerText = "🕶️";
+        mode.style.fontSize= "1.6rem";
+        
+    }
+    else{
+        document.documentElement.setAttribute("color-mode", "dark");
+        mode.innerText = "☀️";
+        mode.style.fontSize= "1.6rem";
+    }
 })

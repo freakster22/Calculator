@@ -1,40 +1,59 @@
 @font-face {
-    font-family: Kalam;
-    src: url("Kalam-Bold.ttf");
+  font-family: Kalam;
+  src: url("Kalam-Bold.ttf");
 }
 
-
-:root{
-    --primary: rgb(255,255,255);
-    --secondary: rgb(12, 12, 12);
-    --input: rgba(93, 93, 93, 0.93);
-    --btnClr: linear-gradient(135deg, #d5ebfb 0%,#89c3eb 49%,#abd3ee 50%,#ebf1f6 100%);
-
+:root[color-mode="dark"] {
+  --primary: rgb(255, 255, 255);
+  --secondary: rgb(12, 12, 12);
+  --input: rgba(93, 93, 93, 0.93);
+  --btnClr: linear-gradient(
+    135deg,
+    #d5ebfb 0%,
+    #89c3eb 49%,
+    #abd3ee 50%,
+    #ebf1f6 100%
+  );
+  --footer: rgb(65, 05, 05);
+  --btn-hover: rgb(116, 196, 241);
 }
-body{
-    background-color: var(--secondary);
+:root[color-mode="light"] {
+  --primary: rgb(12, 12, 12);
+  --secondary: rgb(255, 255, 255);
+  --input: rgba(93, 93, 93, 0.93);
+  --btnClr: linear-gradient(
+    135deg,
+    #d5ebfb 0%,
+    #89c3eb 49%,
+    #abd3ee 50%,
+    #ebf1f6 100%
+  );
+  --footer: rgb(255, 204, 179);
+  --btn-hover: rgb(46, 83, 104);
 }
-.calculator{
-    background-color: var(--secondary);
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 3rem;
-    font-size: 2.3rem;
+body {
+  background-color: var(--secondary);
 }
-#display{
-    height: 4rem;
-    border-radius: 3px;
-    background-color: var(--input);
-    width: calc(5rem * 3.2);
-    font-size: 3rem;
-    font-family: Kalam;
-    text-align-last: right;
-    border-right: none;
-    margin-bottom: 0.3rem;
-
+.calculator {
+  background-color: var(--secondary);
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  font-size: 2.3rem;
+}
+#display {
+  height: 4rem;
+  border-radius: 3px;
+  background-color: var(--input);
+  width: calc(5rem * 3.2);
+  font-size: 3rem;
+  font-family: Kalam;
+  text-align-last: right;
+  border-right: none;
+  margin-bottom: 0.3rem;
 }
 /* #backspace{
     height: 4rem;
@@ -45,47 +64,63 @@ body{
     align-items: center;
     align-content: center;
 } */
-button{
-    background: var(--btnClr);
-    border-radius: 40px;
-    margin: 2px;
-    padding: 3px;
-    border: solid black;
-    background-color: var(--primary);
-    height: 5rem;
-    width: 5rem;
-    font-size: 3rem;
-    font-family: Kalam;
-    box-shadow: 3px 2px 5px rgb(212,175,55);
+form >div> button {
+  background: var(--btnClr);
+  border-radius: 40px;
+  margin: 2px;
+  padding: 3px;
+  border: solid black;
+  background-color: var(--primary);
+  height: 5rem;
+  width: 5rem;
+  font-size: 3rem;
+  font-family: Kalam;
+  box-shadow: 3px 2px 5px rgb(212, 175, 55);
 }
-/* div{
-    margin: 0;
-} */
-#power{
-    font-size: 2.65rem;
+
+form >div>button:hover {
+  background: linear-gradient(
+    135deg,
+    #cedbe9 0%,
+    #aac5de 17%,
+    #6199c7 50%,
+    #3a84c3 51%,
+    #419ad6 59%,
+    #4bb8f0 71%,
+    #3a8bc2 84%,
+    #26558b 100%
+  );
 }
-#AC{
-    font-size: 1.2rem;
-}
-.footer{
-    text-align: center;
-    bottom: 0;
-    position: sticky;
-    background-color: rgb(34, 6, 6);
-    color: var(--primary);
-    border-radius: 17px;
-    z-index: -1;
-}
-.foot-btn{
-    border-radius: 0;
-    background: transparent;
-    color: var(--input);
-    font-size: 3rem;
-    font-family: fantasy;
-    width: 10rem;
-    margin: auto;
-    padding: auto;
+form >div>button:active{
     box-shadow: none;
+    transform: translateY(2px) translateX(5px);
 
-
+}
+#power {
+  font-size: 2.65rem;
+}
+#AC {
+  font-size: 1.2rem;
+}
+.footer {
+  text-align: center;
+  bottom: 0;
+  position: sticky;
+  background-color: var(--footer);
+  color: var(--primary);
+  border-radius: 17px;
+  z-index: -1;
+}
+.foot-btn {
+  border-radius: 5px;
+  color: black;
+  font-size: 2rem;
+  font-family: sans-serif;
+  width: 11rem;
+  margin: auto;
+}
+.foot-btn:hover {
+  box-shadow: 3px 3px var(--btn-hover);
+  transition: ease all 0.4s;
+  transform: translateY(5deg);
 }
