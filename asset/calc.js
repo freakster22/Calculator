@@ -126,10 +126,15 @@ backspace.addEventListener("click", function () {
 
 equal.addEventListener("click", function () {
     var expression = input.value;
+    if (expression.includes(",")) {
+        expression = reverseNum(expression);
+    }
+    console.log("post reverse function");
     if (expression.includes("^")) {
         var x = expression.substr(0, expression.indexOf('^'));
         var y = expression.substr(expression.indexOf('^') + 1, expression.length);
-        input.value = Math.pow(x, y);
+        expression = Math.pow(x, y);
+        formatNum(expression);
 
     }
     else
@@ -141,9 +146,7 @@ equal.addEventListener("click", function () {
                 input.value = "| ERROR!! |";
             }
             else {
-                console.log("false");
-                console.log(expression);
-                input.value = expression;
+                formatNum(expression);
             }
         } catch (e) {
             input.value = "| ERROR!! |";
@@ -171,3 +174,16 @@ mode.addEventListener("click", function(){
         mode.style.fontSize= "1.6rem";
     }
 })
+
+function formatNum(e){
+    var n = Number(e);
+    if(this.e == "")
+        input.value= "";
+    else
+        input.value = n.toLocaleString("en");
+}
+function reverseNum(e){
+    console.log("in Reverse");
+    console.log(e.replace(/,/g,''));
+    return e.replace(/,/g,'');
+}
