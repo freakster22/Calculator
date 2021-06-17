@@ -1,8 +1,3 @@
-@font-face {
-  font-family: Kalam;
-  src: url("Kalam-Bold.ttf");
-}
-
 :root[color-mode="dark"] {
   --primary: rgb(255, 255, 255);
   --secondary: rgb(12, 12, 12);
@@ -30,6 +25,10 @@
   );
   --footer: rgb(255, 204, 179);
   --btn-hover: rgb(46, 83, 104);
+}
+@font-face {
+  font-family: Kalam;
+  src: url("Kalam-Bold.ttf");
 }
 body {
   background-color: var(--secondary);

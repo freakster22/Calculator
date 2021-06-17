@@ -23,6 +23,8 @@ var input = document.getElementById("display");
 
 var mode = document.getElementById("mode");
 
+window.onload = document.documentElement.setAttribute("color-mode","dark");
+
 num0.addEventListener("click", function () {
     console.log("0 pressed");
     input.value += "0";
@@ -153,14 +155,17 @@ allclr.addEventListener("click", function () {
     input.value = "";
 })
 
-mode.addEventListener("click", function () {
+mode.addEventListener("click", function(){
+    console.log("clr Mode clicked");
     if (document.documentElement.getAttribute("color-mode") == "dark"){
+        console.log("in If dark element");
         document.documentElement.setAttribute("color-mode", "light");
         mode.innerText = "🕶️";
         mode.style.fontSize= "1.6rem";
         
     }
     else{
+        console.log("in else light element");
         document.documentElement.setAttribute("color-mode", "dark");
         mode.innerText = "☀️";
         mode.style.fontSize= "1.6rem";
